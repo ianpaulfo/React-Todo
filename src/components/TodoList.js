@@ -2,7 +2,6 @@
 // feel free to change this component.js into TodoList.js
 import React from 'react';
 import Todo from './Todo';
-import todoTasks from './TasksArray'
 
 const TodoList = props => {
 
@@ -13,11 +12,13 @@ const TodoList = props => {
             {props.todoTasks.map(task => (
               <Todo
               key={task.id}
-              name={task}
+              task={task}
               toggleCompleted={props.toggleCompleted}
             /> 
             ))}
-
+            <button className="clear-btn" onClick={props.clearCompleted}>
+              Clear Completed
+            </button>
 
           </div>
         );
