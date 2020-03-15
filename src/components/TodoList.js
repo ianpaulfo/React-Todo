@@ -1,13 +1,25 @@
-// your components will all go in this `component` directory.
-// feel free to change this component.js into TodoList.js
+
 import React from 'react';
 import Todo from './Todo';
+import styled from 'styled-components';
+
+const TodoToday = styled.div`
+display: flex; 
+flex-direction: row;
+justify-content: space-between;
+`
+const TodoButton = styled.button`
+background-color: black;
+color: white;
+border: 2px solid grey;
+text-align: center;
+`
 
 const TodoList = props => {
 
         return (
     
-           <div>
+           <TodoToday>
       
             {props.todoTasks.map(task => (
               <Todo
@@ -16,11 +28,13 @@ const TodoList = props => {
               toggleCompleted={props.toggleCompleted}
             /> 
             ))}
-            <button className="clear-btn" onClick={props.clearCompleted}>
+          <br>
+          </br>
+            <TodoButton className="clear-btn" onClick={props.clearCompleted}>
               Clear Completed
-            </button>
+            </TodoButton>
 
-          </div>
+          </TodoToday>
         );
       };
 

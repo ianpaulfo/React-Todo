@@ -2,6 +2,14 @@ import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './components/Todo.css'
+import styled from 'styled-components';
+
+const Title = styled.h2`
+background-color: black;
+color: white;
+border: 2px solid grey;
+text-align: center;
+`
 
 
 const todoTasks = [
@@ -72,7 +80,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <Title>To Do list!</Title>
         <TodoList 
           todoTasks={this.state.todoTasks}
           toggleCompleted={this.toggleCompleted}
